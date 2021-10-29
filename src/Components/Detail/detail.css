@@ -1,0 +1,17 @@
+.container {
+    position: relative;
+    width: 100%;
+  }
+.image {
+    display: block;
+    width: 100%;
+  }
+  
+.middle {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    text-align: center;
+    color: white;
+  }
+    
