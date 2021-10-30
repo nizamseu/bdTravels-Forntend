@@ -10,6 +10,7 @@ import Home from './Components/Home/Home/Home';
 import Navbar from './Components/Home/Header/Navbar';
 import Detail from './Components/Detail/Detail';
 import About from './Components/About/About';
+import Login from './Components/LogIn/Login';
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
 
             <Route exact path = '/detail'>
                <Detail></Detail>
+            </Route>
+
+            <Route exact path = '/login'>
+            <Login></Login>
             </Route>
 
             <Route exact path = '/about'>

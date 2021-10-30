@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Input, Select,InputNumber,DatePicker, ButtonDatePicker, TimePicker,Button } from 'antd';
+import axios from 'axios';
 
 const { Option } = Select;
 
@@ -47,8 +48,8 @@ const UserForm = () => {
         const [districts,setDistricts]=useState([]) 
         const [upazilla,setUpazilla]=useState([]) 
 
-       
-        console.log('upazilla',upazilla);
+
+
 
         useEffect(()=>{
             const url = `https://bdapis.herokuapp.com/api/v1.1/divisions`;
@@ -83,7 +84,15 @@ const UserForm = () => {
           'range-picker': [rangeValue[0].format('YYYY-MM-DD'), rangeValue[1].format('YYYY-MM-DD')],
           
         };
+        values.user.status ='pendding';
+        
+        axios.post('http://localhost:5000/addUser', values)
+        .then(res=> {
+          console.log(res);
+        });
+
         console.log('Received values of form: ', values);
+       
       };
 
 
