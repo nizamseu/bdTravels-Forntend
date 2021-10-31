@@ -29,7 +29,7 @@ const MyItem = () => {
     // Load data 
     const email = user?.email;
 useEffect(()=>{
-    const url=`http://localhost:5000/findUser/${email}`
+    const url=`https://shielded-crag-67014.herokuapp.com/findUser/${email}`
     axios.get(url)
     .then(data=>{
         setUserData(data.data);
@@ -41,7 +41,7 @@ useEffect(()=>{
     }
 
     const handleDelete =(id)=>{
-        const url =`http://localhost:5000/users/${id}`;
+        const url =`https://shielded-crag-67014.herokuapp.com/users/${id}`;
     
         deleteConfirrm()
         .then((result) => {

@@ -3,9 +3,19 @@ import { Form, Input, Select,InputNumber,DatePicker, ButtonDatePicker, TimePicke
 import axios from 'axios';
 import useFirebase from '../../Hooks/useFirebase';
 import {useParams,useHistory} from "react-router-dom";
+import Swal from 'sweetalert2'
+
 const { Option } = Select;
 
-
+const AlertMessage =()=>{
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1000
+      })
+}
 const layout = {
     labelCol: {
       span: 8,
@@ -44,6 +54,7 @@ const layout = {
 
 
 const UserForm = () => {
+       const [form] = Form.useForm();
         const {user,isLoading}= useFirebase();
         const {from}= useParams()
         const history =useHistory()
@@ -52,6 +63,11 @@ const UserForm = () => {
         const [districts,setDistricts]=useState([]) 
         const [upazilla,setUpazilla]=useState([]) 
 
+
+
+        const onReset = () => {
+          form.resetFields();
+        };
 
         useEffect(()=>{
             const url = `https://bdapis.herokuapp.com/api/v1.1/divisions`;
@@ -93,13 +109,17 @@ const UserForm = () => {
         values.user.email =user.email;
         values.user.from =from;
         
-        axios.post('http://localhost:5000/addUser', values)
+        axios.post('https://shielded-crag-67014.herokuapp.com/addUser', values)
         .then(res=> {
-          console.log(res);
+          if(res?.data?.insertedId){
+            AlertMessage()
+            onReset()
+        }
         });
 
         console.log('Received values of form: ', values);
-       history.push('/my')
+       
+      //  history.push('/')
       };
 
 
@@ -115,7 +135,7 @@ console.log(upazilla);
     return (
         <div style={{margin:'20px 10px'}}>
             <h1>Please Fill Up The Form</h1>
-        <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}
+        <Form {...layout} form={form} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}
         
         >
         <Form.Item

@@ -18,7 +18,7 @@ const Update = () => {
     const [update,setUpdate] =useState({});
 
 useEffect(()=>{
-    const url =`http://localhost:5000/findUser/${id}`;
+    const url =`https://shielded-crag-67014.herokuapp.com/findUser/${id}`;
 
     fetch(url)
     .then(res=>res.json())
@@ -34,7 +34,7 @@ const handleChange =(e)=>{
       
 }
 const handleUpdate =(e)=>{
-    const url =`http://localhost:5000/user/${id}`;
+    const url =`https://shielded-crag-67014.herokuapp.com/user/${id}`;
     fetch(url,{
         method:'PUT',
         headers:{

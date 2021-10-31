@@ -9,7 +9,7 @@ const Details = () => {
     const [user,setUser]=useState({});
 
     useEffect(()=>{
-        const url =`http://localhost:5000/find/${id}`
+        const url =`https://shielded-crag-67014.herokuapp.com/find/${id}`
 
         fetch(url)
         .then(res=>res.json())

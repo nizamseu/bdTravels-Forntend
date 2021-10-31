@@ -16,6 +16,7 @@ import ManageItem from './Components/ManageItem/ManageItem';
 import MyItem from './Components/MyItem/MyItem';
 import Details from './Components/Details/Details';
 import Update from './Components/Update/Update';
+import ManageItemMain from './Components/ManageItem/ManageItemMain';
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
               <MyItem></MyItem>
             </Route>
             <Route exact path = '/manage'>
-             <ManageItem></ManageItem>
+             <ManageItemMain></ManageItemMain>
             </Route>
             <Route path='/details/:id'>
                 <Details></Details>
