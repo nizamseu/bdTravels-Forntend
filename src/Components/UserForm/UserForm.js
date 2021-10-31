@@ -133,7 +133,7 @@ console.log("locattion",location);
 console.log(upazilla);
 
     return (
-        <div style={{margin:'20px 10px'}}>
+        <div style={{margin:'20px 30px',padding:'20px'}}>
             <h1>Please Fill Up The Form</h1>
         <Form {...layout} form={form} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}
         
@@ -164,7 +164,7 @@ console.log(upazilla);
         <RangePicker style={{width:'100%'}} />
       </Form.Item>
 
-      <Form.Item name={['user', 'from']} label="From">
+      <Form.Item name={['user', 'from']} label="Destination">
        {location&& <Input defaultValue={location} value={location} />}
       </Form.Item>
 
@@ -214,7 +214,7 @@ console.log(upazilla);
       </Form.Item>
 
 
-      <Form.Item name={['user', 'introduction']} label="Introduction">
+      <Form.Item name={['user', 'introduction']} label="Note">
         <Input.TextArea />
       </Form.Item>
 

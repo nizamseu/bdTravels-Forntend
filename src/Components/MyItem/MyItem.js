@@ -33,7 +33,7 @@ useEffect(()=>{
     })  
 },[email])
 
-    if(isLoading){
+    if(isLoading||(userData.length<1)){
         return<h1>Loadding....</h1>
     }
 

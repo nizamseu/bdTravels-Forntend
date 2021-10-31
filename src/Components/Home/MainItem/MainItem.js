@@ -16,7 +16,7 @@ const MainItem = () => {
 console.log(item);
     return (
         <div  justify='center' align='middle' >
-            <h1>Top Destinations</h1>
+            <h1 style={{margin:'25px 0'}}>Top Destinations</h1>
             <Row  gutter={[10, 60]} >
             {
                 item&&item.map(result=><ItemCard result={result}></ItemCard>)

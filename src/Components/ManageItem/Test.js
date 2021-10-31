@@ -2,7 +2,9 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
+import './manageItem.css';
 import { FormControl,Select, MenuItem,FormHelperText } from '@mui/material';
+
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -48,12 +50,12 @@ const Test = ({actionId,handleClose,setIsUpdate}) => {
           onChange={handleChange}
           displayEmpty
         >
-          <MenuItem value="">
+          <MenuItem value="" className='selectItem'>
             <em>Pending</em>
-          </MenuItem>
-          <MenuItem value={'Pending'}>Pending</MenuItem>
-          <MenuItem value={'Approved'}>Approved</MenuItem>
-          <MenuItem value={'Cancel'}>Cancel</MenuItem>
+          </MenuItem><br />
+          <MenuItem value={'Pending'} className='selectItem'>Pending</MenuItem> <br />
+          <MenuItem value={'Approved'} className='selectItem'>Approved</MenuItem><br />
+          <MenuItem value={'Cancel'} className='selectItem'>Cancel</MenuItem><br />
         </Select>
       </FormControl>
         </div>

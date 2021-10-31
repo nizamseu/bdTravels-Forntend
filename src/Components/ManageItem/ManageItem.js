@@ -135,7 +135,7 @@ const handleDelete =(id)=>{
                      
                     </td>
                     <td>
-                    <Button onClick={()=>handleDelete(item._id)} variant="danger">DELETE</Button>
+                    <Button  onClick={()=>handleDelete(item._id)} variant="contained" >DELETE</Button>
                     </td>
                 </tr>
                     )
@@ -148,7 +148,7 @@ const handleDelete =(id)=>{
        open={open}
        onClose={handleClose}
       >
-    <DialogTitle>Action Type <br/></DialogTitle>
+    <DialogTitle> Action Type <br/></DialogTitle>
     <DialogContent>
      <Test actionId={actionId} handleClose={handleClose} setIsUpdate={setIsUpdate}></Test>
     </DialogContent>

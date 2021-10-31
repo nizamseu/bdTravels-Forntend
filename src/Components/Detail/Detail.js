@@ -42,7 +42,7 @@ console.log("id",from);
                         <img height='300px' src={detail.thumbnail} alt="" />
                     </div>
                     <div> 
-                        <p style={{margin:'30px 0', textAlign:'justify', fontSize:'16px'}}>Lorem ipsum, dolor sit amet consectetur </p>
+                        <p style={{margin:'30px 0', textAlign:'justify', fontSize:'16px'}}>{detail.description} </p>
                     </div>
                </Col>
 

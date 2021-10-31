@@ -28,8 +28,15 @@ const Login = () => {
 
     return (
         <div>
-            <h1>Login</h1>
-            <Button onClick={signInWithGoogle}>Login</Button>
+            <h1 style={{margin:'30px 0'}}>Login from</h1>
+            <div className='d-flex justify-content-center  mx-auto ' style={{height:'250px',width:'300px',padding:'30px',boxShadow:'10px 10px 15px gray',borderRadius:'20px'}}>
+            <div>
+                <h6 style={{marginBottom:'100px'}}>Login with Google</h6>
+            <Button type="primary" danger onClick={signInWithGoogle}>Login With Google</Button>
+            </div>
+            </div>
+            
+            
         </div>
     );
 };

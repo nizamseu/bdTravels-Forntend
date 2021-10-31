@@ -13,11 +13,13 @@ import About from './Components/About/About';
 import Login from './Components/LogIn/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import ManageItem from './Components/ManageItem/ManageItem';
+import NotFound from './Components/404/NotFound.js';
 import MyItem from './Components/MyItem/MyItem';
 import Details from './Components/Details/Details';
 import Update from './Components/Update/Update';
 import Footer from './Components//Footer/Footer';
 import ManageItemMain from './Components/ManageItem/ManageItemMain';
+
 
 function App() {
   return (
@@ -42,12 +44,12 @@ function App() {
             <Route exact path = '/about'>
               <About></About>
             </Route>
-            <Route exact path = '/my'>
+            <PrivateRoute path = '/my'>
               <MyItem></MyItem>
-            </Route>
-            <Route exact path = '/manage'>
+            </PrivateRoute>
+            <PrivateRoute exact path = '/manage'>
              <ManageItemMain></ManageItemMain>
-            </Route>
+            </PrivateRoute>
             <Route path='/details/:id'>
                 <Details></Details>
             </Route>
@@ -58,6 +60,10 @@ function App() {
 
             <Route exact path = '/home'>
                 <Home></Home>
+            </Route>
+
+            <Route  path = '*'>
+               <NotFound></NotFound>
             </Route>
         </Switch>
         <Footer></Footer>

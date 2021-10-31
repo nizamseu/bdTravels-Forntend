@@ -19,10 +19,10 @@ const Navbar = () => {
               BD Travel
             </Menu.Item>
             <Menu.Item ><Link to='/'>Home</Link></Menu.Item>
-            <Menu.Item ><Link to='/about'>About</Link></Menu.Item>
             <Menu.Item ><Link to='/my'>My Item</Link></Menu.Item>
             <Menu.Item ><Link to='/manage'>Manage Item</Link></Menu.Item>
-            <Menu.Item ><Link to='/admin'>Admin</Link></Menu.Item>
+            <Menu.Item ><Link to='/about'>About</Link></Menu.Item>
+           
            {
              user.email ?
              <Menu.Item ><Button type="primary" danger onClick={handleLogOut}>Log Out</Button></Menu.Item>
