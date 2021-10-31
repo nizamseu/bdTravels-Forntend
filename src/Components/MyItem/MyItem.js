@@ -86,6 +86,8 @@ console.log(userData);
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Destination</th>
+                    <th>Date</th>
                     <th>Details</th>
                     <th>Update</th>
                     <th>Delete</th>
@@ -96,6 +98,8 @@ console.log(userData);
                    userData?.map(item=><tr>
                     <td>{item.user.name}</td>
                     <td>{item.user.email}</td>
+                    <td>{item.destination.division}, {item.destination.district},{item.destination.upazilla}</td>
+                    <td>{item?.range?.join()}</td>
                     <td>
                     <Button  variant="primary"> 
                          <Link style={{textDecoration:'none',color:'white'}} to={`/details/${item._id}`}>Details</Link>

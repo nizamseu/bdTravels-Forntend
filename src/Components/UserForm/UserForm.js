@@ -82,10 +82,10 @@ const UserForm = () => {
       const onFinish = (fieldsValue) => {
         // Should format date value before submit.
      
-        const rangeValue = fieldsValue['range-picker'];
+        const rangeValue = fieldsValue['range'];
         const values = {
           ...fieldsValue,
-          'range-picker': [rangeValue[0].format('YYYY-MM-DD'), rangeValue[1].format('YYYY-MM-DD')],
+          'range': [rangeValue[0].format('YYYY-MM-DD'), rangeValue[1].format('YYYY-MM-DD')],
           
         };
         values.user.status ='pendding';
@@ -139,7 +139,7 @@ console.log(upazilla);
         <Input defaultValue ={user?.email} value={user.email} />
       </Form.Item>
       
-      <Form.Item  name="range-picker" label="Date Range" 
+      <Form.Item  name="range" label="Date Range" 
             {...rangeConfig}>
         <RangePicker style={{width:'100%'}} />
       </Form.Item>

@@ -14,6 +14,8 @@ import Login from './Components/LogIn/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import ManageItem from './Components/ManageItem/ManageItem';
 import MyItem from './Components/MyItem/MyItem';
+import Details from './Components/Details/Details';
+import Update from './Components/Update/Update';
 
 function App() {
   return (
@@ -43,6 +45,13 @@ function App() {
             </Route>
             <Route exact path = '/manage'>
              <ManageItem></ManageItem>
+            </Route>
+            <Route path='/details/:id'>
+                <Details></Details>
+            </Route>
+
+            <Route path='/update/:id'>
+               <Update></Update>
             </Route>
 
             <Route exact path = '/home'>

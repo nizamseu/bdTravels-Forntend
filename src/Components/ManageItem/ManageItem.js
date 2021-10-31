@@ -71,6 +71,7 @@ const handleDelete =(id)=>{
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Date</th>
                     <th>Destination</th>
                     <th>Details</th>
                     <th>Update</th>
@@ -82,7 +83,8 @@ const handleDelete =(id)=>{
                    user&& user?.map(item=><tr>
                     <td>{item.user.name}</td>
                     <td>{item.user.email}</td>
-                    <td>{item.destination.division}, {item.destination.district},{item.destination.upazilla}</td>
+                    <td>{item?.range?.join()}</td>
+                    <td>{item.destination.division}, {item.destination.district}, {item.destination.upazilla}</td>
                     <td>
                     <Button  variant="primary"> 
                          <Link style={{textDecoration:'none',color:'white'}} to={`/details/${item._id}`}>Details</Link>
