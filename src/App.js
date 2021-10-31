@@ -16,6 +16,7 @@ import ManageItem from './Components/ManageItem/ManageItem';
 import MyItem from './Components/MyItem/MyItem';
 import Details from './Components/Details/Details';
 import Update from './Components/Update/Update';
+import Footer from './Components//Footer/Footer';
 import ManageItemMain from './Components/ManageItem/ManageItemMain';
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
                 <Home></Home>
             </Route>
         </Switch>
+        <Footer></Footer>
     </Router>
     </div>
   );

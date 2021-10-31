@@ -8,7 +8,6 @@ firebaseInitialized()
 const useFirebase = () => {
     const [user,setUser]=useState({})
     const [isLogged,setIsLogged]=useState(false)
-    const [error,setError]=useState({})
     const [isLoading,setIsLoading]=useState(true)
    
     const auth = getAuth();

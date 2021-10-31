@@ -7,9 +7,6 @@ import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import {  Layout, Menu} from 'antd';
-import { DingtalkOutlined  } from '@ant-design/icons';
 import Test from './Test';
 import './manageItem.css'
 const deleteConfirrm =()=>{

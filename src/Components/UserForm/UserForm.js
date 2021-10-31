@@ -53,7 +53,7 @@ const layout = {
   
 
 
-const UserForm = () => {
+const UserForm = ({location}) => {
        const [form] = Form.useForm();
         const {user,isLoading}= useFirebase();
         const {from}= useParams()
@@ -63,7 +63,7 @@ const UserForm = () => {
         const [districts,setDistricts]=useState([]) 
         const [upazilla,setUpazilla]=useState([]) 
 
-
+console.log("locattion",location);
 
         const onReset = () => {
           form.resetFields();
@@ -107,7 +107,7 @@ const UserForm = () => {
         values.user.status ='pendding';
         values.user.name =user.displayName;
         values.user.email =user.email;
-        values.user.from =from;
+        values.user.from =location;
         
         axios.post('https://shielded-crag-67014.herokuapp.com/addUser', values)
         .then(res=> {
@@ -165,7 +165,7 @@ console.log(upazilla);
       </Form.Item>
 
       <Form.Item name={['user', 'from']} label="From">
-        <Input defaultValue={from} />
+       {location&& <Input defaultValue={location} value={location} />}
       </Form.Item>
 
       <Form.Item

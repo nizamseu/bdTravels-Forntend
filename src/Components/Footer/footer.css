@@ -1,0 +1,12 @@
+.footer{
+    text-decoration: none;
+    margin-top: 30px;
+    font-size: 22px;
+    text-align: left;;
+    color: cornflowerblue;
+}
+.icon{
+   display: flex;
+   justify-content: space-evenly;
+   
+}

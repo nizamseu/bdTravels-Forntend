@@ -2,9 +2,7 @@ import React ,{ useEffect, useState }from 'react';
 import useFirebase from '../../Hooks/useFirebase';
 import axios from 'axios';
 import {Typography } from '@mui/material';
-import { Box } from '@mui/system';
 import { Table, Button } from 'react-bootstrap';
-import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -24,7 +22,6 @@ const deleteConfirrm =()=>{
 const MyItem = () => {
     const {user,isLoading} =useFirebase()
     const [userData,setUserData] = useState([]);
-    const history =useHistory()
 
     // Load data 
     const email = user?.email;
@@ -89,7 +86,7 @@ console.log(userData);
                     <th>Destination</th>
                     <th>Date</th>
                     <th>Details</th>
-                    <th>Update</th>
+                    {/* <th>Update</th> */}
                     <th>Delete</th>
                 </tr>
             </thead>
@@ -105,11 +102,11 @@ console.log(userData);
                          <Link style={{textDecoration:'none',color:'white'}} to={`/details/${item._id}`}>Details</Link>
                     </Button>
                     </td>
-                    <td>
+                    {/* <td>
                         <Button variant="info">
                         <Link style={{textDecoration:'none',color:'white'}} to={`/update/${item._id}`}>Update</Link>
                     </Button>
-                    </td>
+                    </td> */}
                     <td>
                     <Button onClick={()=>handleDelete(item._id)} variant="danger">DELETE</Button>
                     </td>

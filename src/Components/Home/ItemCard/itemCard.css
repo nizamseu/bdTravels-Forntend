@@ -5,3 +5,7 @@
 .card{
  overflow: hidden;
 }
+
+a{
+    text-decoration: none;
+}
