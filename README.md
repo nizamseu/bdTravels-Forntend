@@ -7,15 +7,15 @@
 Welcome to the  bdTravels . WA travel agency is a private retailer or public service that provides travel and tourism-related services to the people. And suppliers such as activities, airlines, car rentals, cruise lines, hotels, railways, travel insurance, and package tours. Here you can know about the Top 10 Travel Agency in Bangladesh.
 
 
-## FrontendLanguage 
+## Frontend 
   * JavaScrip
   * HTML
   * CSS
 
-## FrontendLanguage 
-  * JavaScrip
+## Backend
+  * Nodejs
   * Express
-  * Node
+  
 
 ## Framework
   * Material UI
