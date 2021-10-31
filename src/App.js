@@ -11,6 +11,9 @@ import Navbar from './Components/Home/Header/Navbar';
 import Detail from './Components/Detail/Detail';
 import About from './Components/About/About';
 import Login from './Components/LogIn/Login';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import ManageItem from './Components/ManageItem/ManageItem';
+import MyItem from './Components/MyItem/MyItem';
 
 function App() {
   return (
@@ -24,9 +27,9 @@ function App() {
                 <Home></Home>
             </Route>
 
-            <Route exact path = '/detail'>
+            <PrivateRoute exact path = '/detail/:from'>
                <Detail></Detail>
-            </Route>
+            </PrivateRoute>
 
             <Route exact path = '/login'>
             <Login></Login>
@@ -34,6 +37,12 @@ function App() {
 
             <Route exact path = '/about'>
               <About></About>
+            </Route>
+            <Route exact path = '/my'>
+              <MyItem></MyItem>
+            </Route>
+            <Route exact path = '/manage'>
+             <ManageItem></ManageItem>
             </Route>
 
             <Route exact path = '/home'>

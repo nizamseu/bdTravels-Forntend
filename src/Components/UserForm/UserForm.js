@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Form, Input, Select,InputNumber,DatePicker, ButtonDatePicker, TimePicker,Button } from 'antd';
 import axios from 'axios';
-
+import useFirebase from '../../Hooks/useFirebase';
+import {useParams,useHistory} from "react-router-dom";
 const { Option } = Select;
 
 
@@ -43,12 +44,13 @@ const layout = {
 
 
 const UserForm = () => {
-        const [division,setDivision]=useState([]) //first load 
-        const [district,setDistrict]=useState([])//onChange Division 
+        const {user,isLoading}= useFirebase();
+        const {from}= useParams()
+        const history =useHistory()
+        const [division,setDivision]=useState([]) 
+        const [district,setDistrict]=useState([])
         const [districts,setDistricts]=useState([]) 
         const [upazilla,setUpazilla]=useState([]) 
-
-
 
 
         useEffect(()=>{
@@ -73,7 +75,9 @@ const UserForm = () => {
                 
         },[district])
  
-
+        if(isLoading){
+          return <div>Loadding ....</div>
+        }
 
       const onFinish = (fieldsValue) => {
         // Should format date value before submit.
@@ -85,6 +89,9 @@ const UserForm = () => {
           
         };
         values.user.status ='pendding';
+        values.user.name =user.displayName;
+        values.user.email =user.email;
+        values.user.from =from;
         
         axios.post('http://localhost:5000/addUser', values)
         .then(res=> {
@@ -92,7 +99,7 @@ const UserForm = () => {
         });
 
         console.log('Received values of form: ', values);
-       
+       history.push('/my')
       };
 
 
@@ -104,20 +111,20 @@ const UserForm = () => {
          upazillaData && setUpazilla(upazillaData.upazilla)
 }
 console.log(upazilla);
+
     return (
         <div style={{margin:'20px 10px'}}>
             <h1>Please Fill Up The Form</h1>
-            <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
-      <Form.Item
+        <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}
+        
+        >
+        <Form.Item
         name={['user', 'name']}
         label="Name"
-        rules={[
-          {
-            required: true,
-          },
-        ]}
+        
+       
       >
-        <Input />
+       <Input  values={user.displayName} defaultValue={user.displayName} />
       </Form.Item>
       <Form.Item
         name={['user', 'email']}
@@ -127,8 +134,9 @@ console.log(upazilla);
             type: 'email',
           },
         ]}
+        value='nnnnnn'
       >
-        <Input />
+        <Input defaultValue ={user?.email} value={user.email} />
       </Form.Item>
       
       <Form.Item  name="range-picker" label="Date Range" 
@@ -137,7 +145,7 @@ console.log(upazilla);
       </Form.Item>
 
       <Form.Item name={['user', 'from']} label="From">
-        <Input />
+        <Input defaultValue={from} />
       </Form.Item>
 
       <Form.Item
