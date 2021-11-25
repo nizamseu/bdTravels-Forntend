@@ -25,9 +25,9 @@ const MyItem = () => {
 
     // Load data 
     const email = user?.email;
-useEffect(()=>{
+useEffect(async()=>{
     const url=`https://shielded-crag-67014.herokuapp.com/findUser/${email}`
-    axios.get(url)
+   await axios.get(url)
     .then(data=>{
         setUserData(data.data);
     })  
@@ -84,7 +84,7 @@ console.log(userData);
                     <th>Name</th>
                     <th>Email</th>
                     <th>Destination</th>
-                    <th>Date</th>
+                    {/* <th>Date</th> */}
                     <th>Details</th>
                     {/* <th>Update</th> */}
                     <th>Delete</th>
@@ -96,7 +96,7 @@ console.log(userData);
                     <td>{item.user.name}</td>
                     <td>{item.user.email}</td>
                     <td>{item.destination.division}, {item.destination.district},{item.destination.upazilla}</td>
-                    <td>{item?.range?.join()}</td>
+                    {/* <td>{item?.range?.join()}</td> */}
                     <td>
                     <Button  variant="primary"> 
                          <Link style={{textDecoration:'none',color:'white'}} to={`/details/${item._id}`}>Details</Link>

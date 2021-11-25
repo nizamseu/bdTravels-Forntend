@@ -104,7 +104,7 @@ console.log("locattion",location);
           'range': [rangeValue[0].format('YYYY-MM-DD'), rangeValue[1].format('YYYY-MM-DD')],
           
         };
-        values.user.status ='pendding';
+        values.user.status ='Pending';
         values.user.name =user.displayName;
         values.user.email =user.email;
         values.user.from =location;
